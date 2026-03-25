@@ -402,7 +402,7 @@ function finalizarPedido() {
     const totalGeral = calcularTotalGeral();
     const totalFormatado = totalGeral.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
-    let mensagem = `*🍔 NOVO PEDIDO - JUCA LANCHES*\n`;
+    let mensagem = `*🍔 NOVO PEDIDO - JUQUINHA LANCHES*\n`;
     mensagem += `-----------------------------------\n`;
     mensagem += `👤 *Cliente:* ${nome}\n`;
     mensagem += `🛵 *Modo:* ${tipoEntrega}\n\n`;
