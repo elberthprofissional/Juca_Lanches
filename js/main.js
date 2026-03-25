@@ -43,11 +43,75 @@ let itemSendoMontado = {
 let tipoEntrega = 'Entrega'; 
 
 // ==========================================
+// FUNÇÕES DO MODAL CUSTOMIZADO
+// ==========================================
+
+function mostrarAlerta(mensagem) {
+    const modal = document.getElementById('custom-alert');
+    const mensagemEl = document.getElementById('custom-alert-message');
+    const box = document.getElementById('custom-alert-box');
+
+    mensagemEl.innerText = mensagem;
+    
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+
+    setTimeout(() => {
+        modal.classList.remove('opacity-0');
+        box.classList.remove('scale-95');
+        box.classList.add('scale-100');
+    }, 10);
+}
+
+function fecharAlerta() {
+    const modal = document.getElementById('custom-alert');
+    const box = document.getElementById('custom-alert-box');
+
+    modal.classList.add('opacity-0');
+    box.classList.remove('scale-100');
+    box.classList.add('scale-95');
+
+    setTimeout(() => {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+    }, 300); 
+}
+
+// ==========================================
+// VALIDAÇÃO INLINE DE FORMULÁRIO
+// ==========================================
+
+function limparErros() {
+    const campos = ['nome', 'rua', 'numero', 'bairro'];
+    campos.forEach(campo => {
+        const input = document.getElementById(`input-${campo}`);
+        const erro = document.getElementById(`erro-${campo}`);
+        if(input) {
+            input.classList.remove('border-red-500');
+            if(!input.classList.contains('border-white/10')) input.classList.add('border-white/10');
+        }
+        if(erro) erro.classList.add('hidden');
+    });
+}
+
+function mostrarErro(campo, mensagem) {
+    const input = document.getElementById(`input-${campo}`);
+    const erro = document.getElementById(`erro-${campo}`);
+    if(input) {
+        input.classList.remove('border-white/10');
+        input.classList.add('border-red-500');
+    }
+    if(erro) {
+        if(mensagem) erro.innerText = mensagem;
+        erro.classList.remove('hidden');
+    }
+}
+
+// ==========================================
 // FUNÇÕES DO CARRINHO
 // ==========================================
 
 function iniciarPedido(nomeLanche) {
-    // Zera o item que está sendo montado
     itemSendoMontado = {
         lanche: nomeLanche,
         acrescimos: [],
@@ -56,7 +120,6 @@ function iniciarPedido(nomeLanche) {
     
     document.getElementById('nome-lanche-display').innerText = nomeLanche;
     
-    // Desmarca os checkboxes
     document.querySelectorAll('.bebida-checkbox').forEach(cb => cb.checked = false);
     document.querySelectorAll('.acrescimo-checkbox').forEach(cb => cb.checked = false);
     
@@ -65,22 +128,19 @@ function iniciarPedido(nomeLanche) {
 }
 
 function adicionarAoCarrinho() {
-    // Pega as opções selecionadas
     const bebidasCheckboxes = document.querySelectorAll('.bebida-checkbox:checked');
     const acrescimosCheckboxes = document.querySelectorAll('.acrescimo-checkbox:checked');
     
     itemSendoMontado.bebidas = Array.from(bebidasCheckboxes).map(cb => cb.value);
     itemSendoMontado.acrescimos = Array.from(acrescimosCheckboxes).map(cb => cb.value);
     
-    // Calcula o valor deste item específico
     let valorItem = tabelaPrecos[itemSendoMontado.lanche] || 0;
     itemSendoMontado.acrescimos.forEach(item => valorItem += tabelaPrecos[item] || 0);
     itemSendoMontado.bebidas.forEach(item => valorItem += tabelaPrecos[item] || 0);
     
     itemSendoMontado.valorTotal = valorItem;
 
-    // Joga no Array Global do Carrinho
-    carrinho.push(JSON.parse(JSON.stringify(itemSendoMontado))); // Deep copy
+    carrinho.push(JSON.parse(JSON.stringify(itemSendoMontado))); 
     
     atualizarBotaoFlutuante();
     mostrarTelaCarrinho();
@@ -92,7 +152,7 @@ function removerDoCarrinho(index) {
     if(carrinho.length === 0) {
         fecharGaveta();
     } else {
-        mostrarTelaCarrinho(); // Renderiza de novo
+        mostrarTelaCarrinho(); 
     }
 }
 
@@ -189,7 +249,7 @@ function mostrarTelaAcompanhamentos() {
 
 function mostrarTelaCarrinho() {
     if(carrinho.length === 0) {
-        alert("Seu carrinho está vazio!");
+        mostrarAlerta("Poxa, seu carrinho está vazio! Escolha algo do cardápio.");
         return fecharGaveta();
     }
     
@@ -296,29 +356,47 @@ async function buscarCEP() {
 
 function finalizarPedido() {
     if(carrinho.length === 0) {
-        alert("Seu carrinho está vazio!");
+        mostrarAlerta("Poxa, seu carrinho está vazio! Escolha algo do cardápio.");
         return;
     }
 
-    const nome = document.getElementById('input-nome').value;
+    limparErros();
+    let temErro = false;
+
+    const nome = document.getElementById('input-nome').value.trim();
     const pagamento = document.getElementById('input-pagamento').value;
-    const troco = document.getElementById('input-troco').value;
+    const troco = document.getElementById('input-troco').value.trim();
     
-    const cep = document.getElementById('input-cep').value;
-    const rua = document.getElementById('input-rua').value;
-    const numero = document.getElementById('input-numero').value;
-    const bairro = document.getElementById('input-bairro').value;
-    const referencia = document.getElementById('input-referencia').value;
+    const cep = document.getElementById('input-cep').value.trim();
+    const rua = document.getElementById('input-rua').value.trim();
+    const numero = document.getElementById('input-numero').value.trim();
+    const bairro = document.getElementById('input-bairro').value.trim();
+    const referencia = document.getElementById('input-referencia').value.trim();
 
-    if(!nome) return alert('Por favor, preencha o seu Nome!');
-
-    if(tipoEntrega === 'Entrega' && (!rua || !numero || !bairro)) {
-        return alert('Por favor, preencha a Rua, Número e Bairro para podermos entregar o seu pedido!');
+    if(!nome) {
+        mostrarErro('nome', 'Por favor, informe como devemos te chamar.');
+        temErro = true;
     }
+
+    if(tipoEntrega === 'Entrega') {
+        if(!rua) {
+            mostrarErro('rua', 'Por favor, informe a rua para a entrega.');
+            temErro = true;
+        }
+        if(!numero) {
+            mostrarErro('numero', 'Informe o Numero.');
+            temErro = true;
+        }
+        if(!bairro) {
+            mostrarErro('bairro', 'Informe o seu bairro.');
+            temErro = true;
+        }
+    }
+
+    if(temErro) return;
 
     guardarDadosCliente(nome, pagamento, cep, rua, numero, bairro, referencia);
 
-    // NÚMERO OFICIAL DE ATENDIMENTO ATUALIZADO AQUI
     const numeroWhatsapp = "5531988866455"; 
     
     const totalGeral = calcularTotalGeral();
@@ -331,8 +409,7 @@ function finalizarPedido() {
 
     mensagem += `*📝 ITENS DO PEDIDO*\n`;
     
-    // Lista cada item do carrinho dinamicamente
-    carrinho.forEach((item, index) => {
+    carrinho.forEach((item) => {
         mensagem += `\n▶ *1x ${item.lanche}*`;
         if(item.acrescimos.length > 0) mensagem += `\n➕ Acréscimos: ${item.acrescimos.join(', ')}`;
         if(item.bebidas.length > 0) mensagem += `\n🥤 Bebidas: ${item.bebidas.join(', ')}`;
@@ -360,18 +437,15 @@ function finalizarPedido() {
         const queryMaps = encodeURIComponent(`${rua}, ${numero} - ${bairro}, Belo Horizonte`);
         mensagem += `🗺️ *Abrir no GPS:* https://www.google.com/maps/search/?api=1&query=${queryMaps}\n`;
         
-        // NOVO AVISO FINAL ATUALIZADO (Se for entrega)
         mensagem += `-----------------------------------\n`;
         mensagem += `⚠️ *Aguardo a confirmação do pedido e o valor da taxa de entrega!*`;
     } else {
-        // NOVO AVISO FINAL (Se for retirada)
         mensagem += `-----------------------------------\n`;
         mensagem += `✅ *Irei retirar no local. Aguardo a confirmação do pedido!*`;
     }
 
     const url = `https://wa.me/${numeroWhatsapp}?text=${encodeURIComponent(mensagem)}`;
     
-    // Esvazia o carrinho e joga pro Whatsapp
     carrinho = [];
     atualizarBotaoFlutuante();
     fecharGaveta();
@@ -428,5 +502,22 @@ function verificarStatusLoja() {
     }
 }
 
-window.addEventListener('DOMContentLoaded', verificarStatusLoja);
-setInterval(verificarStatusLoja, 60000);
+// Remove os avisos de erro instantaneamente quando o cliente começa a digitar e checa a loja
+window.addEventListener('DOMContentLoaded', () => {
+    const campos = ['nome', 'rua', 'numero', 'bairro'];
+    campos.forEach(campo => {
+        const input = document.getElementById(`input-${campo}`);
+        if (input) {
+            input.addEventListener('input', () => {
+                input.classList.remove('border-red-500');
+                if(!input.classList.contains('border-white/10')) input.classList.add('border-white/10');
+                
+                const erro = document.getElementById(`erro-${campo}`);
+                if (erro) erro.classList.add('hidden');
+            });
+        }
+    });
+    
+    verificarStatusLoja();
+    setInterval(verificarStatusLoja, 60000);
+});
