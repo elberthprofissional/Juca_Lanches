@@ -1,0 +1,51 @@
+body {
+    background-color: #0a0a0a;
+    color: #e5e5e5;
+}
+
+/* Barra de navegação com linha inferior marcante (estilo lanchonete) */
+.glass-nav {
+    background: rgba(10, 10, 10, 0.98);
+    border-bottom: 2px solid #F59E0B;
+}
+
+/* ==========================================
+   ESTILOS DA BARRA DE ROLAGEM (PÁGINA GERAL)
+   ========================================== */
+::-webkit-scrollbar { 
+    width: 8px; 
+}
+
+::-webkit-scrollbar-track { 
+    background: #0a0a0a; 
+}
+
+::-webkit-scrollbar-thumb { 
+    background: #333; 
+    border-radius: 4px; 
+}
+
+::-webkit-scrollbar-thumb:hover { 
+    background: #F59E0B; 
+}
+
+/* ==========================================
+   ESTILOS DA BARRA DE ROLAGEM (GAVETA DE PEDIDOS)
+   ========================================== */
+/* Barra de rolagem mais fina e elegante especificamente para a gaveta */
+#checkout-drawer .overflow-y-auto::-webkit-scrollbar {
+    width: 4px;
+}
+
+#checkout-drawer .overflow-y-auto::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#checkout-drawer .overflow-y-auto::-webkit-scrollbar-thumb {
+    background: #222;
+    border-radius: 10px;
+}
+
+#checkout-drawer .overflow-y-auto::-webkit-scrollbar-thumb:hover {
+    background: #F59E0B;
+}

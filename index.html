@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juca Lanches | O Melhor da Região</title>
+    
+    <link rel="icon" type="image/webp" href="img/logo/logo.webp">
+    
+    <meta property="og:title" content="Juca Lanches | O Melhor da Região">
+    <meta property="og:description" content="Faça seu pedido online! Lanches caprichados e entrega rápida.">
+    <meta property="og:type" content="website">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Oswald:wght@400;500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/tailwind-config.js"></script>
+</head>
+<body class="antialiased selection:bg-premium-gold selection:text-black relative">
+
+    <nav class="fixed w-full z-40 glass-nav transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-center md:justify-start items-center h-24">
+                <div class="flex-shrink-0 flex items-center gap-4">
+                    <img src="img/logo/logo.webp" alt="Juca Lanches Logo" class="h-16 w-auto object-contain">
+                    <span class="font-serif font-bold text-2xl tracking-widest text-white uppercase hidden sm:block">
+                        Juca <span class="text-premium-gold italic">Lanches</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="inicio" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1586816001966-79b736744398?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Artesanal" class="w-full h-full object-cover opacity-30">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="text-center max-w-4xl mx-auto">
+                <span class="text-premium-gold text-xs tracking-[0.3em] uppercase mb-4 block">Mata a sua fome</span>
+                <h1 class="text-5xl md:text-7xl font-serif font-bold mb-8 text-white leading-tight">
+                    O melhor lanche <br>
+                    <span class="text-premium-gold italic font-light">da região.</span>
+                </h1>
+                <p class="text-lg text-gray-400 mb-8 font-light max-w-2xl mx-auto leading-relaxed">
+                    Lanches caprichados, ingredientes de primeira e entrega rápida. Escolha o seu favorito e peça agora mesmo no conforto da sua casa!
+                </p>
+                <div id="status-loja" class="mb-10 flex justify-center"></div>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <a href="#cardapio" class="text-white border-b border-premium-gold pb-1 hover:text-premium-gold transition text-sm tracking-widest uppercase">Explorar Cardápio</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria" class="py-16 bg-[#050505] border-t border-white/5 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-sm text-premium-gold tracking-[0.3em] uppercase mb-3">Os mais pedidos</h2>
+                <h3 class="text-3xl md:text-4xl font-serif text-white italic">Feito com muito capricho</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="overflow-hidden rounded-xl h-72 border border-premium-gold/20 shadow-lg group">
+                  <img src="img/imagem_1.webp" alt="Especialidade 1" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                </div>
+                <div class="overflow-hidden rounded-xl h-72 border border-premium-gold/20 shadow-lg group">
+                    <img src="img/imagem_2.webp" alt="Especialidade 2" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                </div>
+                <div class="overflow-hidden rounded-xl h-72 border border-premium-gold/20 shadow-lg group">
+                    <img src="img/imagem_3.webp" alt="Especialidade 3" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cardapio" class="py-24 bg-premium-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="text-center mb-20">
+                <h2 class="text-sm text-premium-gold tracking-[0.3em] uppercase mb-3">A Nossa Seleção</h2>
+                <h3 class="text-4xl md:text-5xl font-serif text-white">Cardápio</h3>
+                <div class="w-12 h-px bg-premium-gold mx-auto mt-8"></div>
+            </div>
+
+            <div class="mb-20">
+                <div class="flex flex-col items-center mb-12">
+                    <h3 class="text-3xl font-serif text-white italic">Hambúrgueres</h3>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                    <div class="border border-premium-border p-8 bg-premium-card hover:border-premium-gold/60 transition duration-500 group flex flex-col justify-between h-full">
+                        <div>
+                            <div class="flex justify-between items-end mb-4 border-b border-white/5 pb-4">
+                                <h4 class="text-xl font-serif text-white group-hover:text-premium-gold transition">01. Hambúrguer Simples</h4>
+                                <span class="text-premium-gold font-medium text-lg">R$ 18,00</span>
+                            </div>
+                            <p class="text-sm text-gray-400 font-light leading-relaxed mb-8">Pão, carne, ovo, bacon, frango desfiado, batata palha, milho, alface e tomate.</p>
+                        </div>
+                        <button onclick="iniciarPedido('Hambúrguer Simples')" class="text-xs tracking-widest uppercase text-gray-300 border border-gray-700 px-4 py-3 hover:bg-premium-gold hover:text-black hover:border-premium-gold transition w-full mt-auto">
+                            Adicionar ao Pedido
+                        </button>
+                    </div>
+
+                    <div class="border border-premium-border p-8 bg-premium-card hover:border-premium-gold/60 transition duration-500 group flex flex-col justify-between h-full">
+                        <div>
+                            <div class="flex justify-between items-end mb-4 border-b border-white/5 pb-4">
+                                <h4 class="text-xl font-serif text-white group-hover:text-premium-gold transition">02. Hambúrguer Melhor</h4>
+                                <span class="text-premium-gold font-medium text-lg">R$ 19,50</span>
+                            </div>
+                            <p class="text-sm text-gray-400 font-light leading-relaxed mb-8">Pão, 2 carnes, ovo, bacon, frango desfiado, batata palha, milho, alface e tomate.</p>
+                        </div>
+                        <button onclick="iniciarPedido('Hambúrguer Melhor')" class="text-xs tracking-widest uppercase text-gray-300 border border-gray-700 px-4 py-3 hover:bg-premium-gold hover:text-black hover:border-premium-gold transition w-full mt-auto">
+                            Adicionar ao Pedido
+                        </button>
+                    </div>
+
+                    <div class="border border-premium-border p-8 bg-premium-card hover:border-premium-gold/60 transition duration-500 group flex flex-col justify-between h-full">
+                        <div>
+                            <div class="flex justify-between items-end mb-4 border-b border-white/5 pb-4">
+                                <h4 class="text-xl font-serif text-white group-hover:text-premium-gold transition">03. Hambúrguer Chefe</h4>
+                                <span class="text-premium-gold font-medium text-lg">R$ 21,50</span>
+                            </div>
+                            <p class="text-sm text-gray-400 font-light leading-relaxed mb-8">Pão, 3 carnes, ovo, bacon, frango desfiado, batata palha, milho, alface e tomate.</p>
+                        </div>
+                        <button onclick="iniciarPedido('Hambúrguer Chefe')" class="text-xs tracking-widest uppercase text-gray-300 border border-gray-700 px-4 py-3 hover:bg-premium-gold hover:text-black hover:border-premium-gold transition w-full mt-auto">
+                            Adicionar ao Pedido
+                        </button>
+                    </div>
+
+                    <div class="border border-premium-border p-8 bg-premium-card hover:border-premium-gold/60 transition duration-500 group flex flex-col justify-between h-full">
+                        <div>
+                            <div class="flex justify-between items-end mb-4 border-b border-white/5 pb-4 mt-2">
+                                <h4 class="text-xl font-serif text-white group-hover:text-premium-gold transition">04. Juquinha Burguer</h4>
+                                <span class="text-premium-gold font-bold text-xl">R$ 25,50</span>
+                            </div>
+                            <p class="text-sm text-gray-400 font-light leading-relaxed mb-8">Pão, 3 carnes, ovo, bacon, presunto, mussarela, cheddar, frango desfiado, batata e tomate.</p>
+                        </div>
+                        <button onclick="iniciarPedido('Juquinha Burguer')" class="text-xs tracking-widest uppercase text-gray-300 border border-gray-700 px-4 py-3 hover:bg-premium-gold hover:text-black hover:border-premium-gold transition w-full mt-auto">
+                            Adicionar ao Pedido
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-16">
+                <div class="flex flex-col items-center mb-12">
+                    <h3 class="text-3xl font-serif text-white italic">Cachorros Quentes</h3>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="border border-premium-border p-8 bg-premium-card hover:border-premium-gold/60 transition duration-500 group flex flex-col justify-between h-full">
+                        <div>
+                            <div class="flex justify-between items-end mb-4 border-b border-white/5 pb-4">
+                                <h4 class="text-xl font-serif text-white group-hover:text-premium-gold transition">05. Cachorro Quente Simples</h4>
+                                <span class="text-premium-gold font-medium text-lg">R$ 12,00</span>
+                            </div>
+                            <p class="text-sm text-gray-400 font-light leading-relaxed mb-8">Pão, salsicha, tomate, milho, frango desfiado e batata palha.</p>
+                        </div>
+                        <button onclick="iniciarPedido('Cachorro Quente Simples')" class="text-xs tracking-widest uppercase text-gray-300 border border-gray-700 px-4 py-3 hover:bg-premium-gold hover:text-black hover:border-premium-gold transition w-full mt-auto">
+                            Adicionar ao Pedido
+                        </button>
+                    </div>
+
+                    <div class="border border-premium-border p-8 bg-premium-card hover:border-premium-gold/60 transition duration-500 group flex flex-col justify-between h-full">
+                        <div>
+                            <div class="flex justify-between items-end mb-4 border-b border-white/5 pb-4">
+                                <h4 class="text-xl font-serif text-white group-hover:text-premium-gold transition">06. Cachorro Quente Top</h4>
+                                <span class="text-premium-gold font-medium text-lg">R$ 14,00</span>
+                            </div>
+                            <p class="text-sm text-gray-400 font-light leading-relaxed mb-8">Pão, 2 salsichas, bacon, tomate, milho, frango desfiado e batata palha.</p>
+                        </div>
+                        <button onclick="iniciarPedido('Cachorro Quente Top')" class="text-xs tracking-widest uppercase text-gray-300 border border-gray-700 px-4 py-3 hover:bg-premium-gold hover:text-black hover:border-premium-gold transition w-full mt-auto">
+                            Adicionar ao Pedido
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative border border-premium-gold/30 p-10 mt-20 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#1a1a1a] to-premium-dark text-center">
+                <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-premium-dark px-6">
+                    <h3 class="font-serif text-premium-gold text-2xl italic">Acréscimos</h3>
+                </div>
+                <p class="text-sm text-gray-400 tracking-widest uppercase mb-8">Turbine o seu lanche na próxima tela</p>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-12">
+                    <div class="text-center">
+                        <p class="text-xs text-gray-500 uppercase tracking-[0.2em] mb-3">Opções Adicionais</p>
+                        <p class="text-sm text-white font-light mb-4 max-w-xs mx-auto">Carne (Bife) • Ovo • Bacon • Presunto • Mussarela • Cheddar</p>
+                        <span class="text-premium-gold font-serif text-2xl">R$ 3,00 <span class="text-xs text-gray-500 font-sans">/cada</span></span>
+                    </div>
+                    <div class="hidden md:block w-px h-24 bg-gradient-to-b from-transparent via-premium-gold/30 to-transparent"></div>
+                    <div class="md:hidden w-full h-px bg-gradient-to-r from-transparent via-premium-gold/30 to-transparent"></div>
+                    <div class="text-center">
+                        <p class="text-xs text-gray-500 uppercase tracking-[0.2em] mb-3">Toque Especial</p>
+                        <p class="text-sm text-white font-light mb-4">Molho Verde</p>
+                        <span class="text-premium-gold font-serif text-2xl">R$ 1,50</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="info" class="py-24 border-t border-white/5">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+                <div class="text-center md:text-left flex flex-col items-center md:items-start">
+                    <i class="ph-light ph-clock text-4xl text-premium-gold mb-6"></i>
+                    <h4 class="font-serif text-xl text-white mb-4">Funcionamento</h4>
+                    <p class="text-sm text-gray-400 font-light mb-2">Terça a Sexta: <span class="text-white">19:30h até 23:30h</span></p>
+                    <p class="text-sm text-gray-400 font-light">Sábado e Domingo: <span class="text-white">19:00h até 23:30h</span></p>
+                </div>
+                <div class="text-center flex flex-col items-center">
+                    <i class="ph-light ph-map-pin text-4xl text-premium-gold mb-6"></i>
+                    <h4 class="font-serif text-xl text-white mb-4">Localização</h4>
+                    <p class="text-sm text-gray-400 font-light mb-1">Rua Cacilda Becker, 50</p>
+                    <p class="text-xs text-gray-500">(Final do Ônibus 1509)</p>
+                </div>
+                <div class="text-center md:text-right flex flex-col items-center md:items-end">
+                    <i class="ph-light ph-wallet text-4xl text-premium-gold mb-6"></i>
+                    <h4 class="font-serif text-xl text-white mb-4">Pagamento</h4>
+                    <p class="text-sm text-gray-400 font-light mb-3">Pix, Cartão e Dinheiro</p>
+                    <div class="border border-premium-gold/30 px-4 py-2 text-xs tracking-widest text-premium-gold">
+                        CHAVE PIX: (31) 9 8341-4989
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative rounded-xl overflow-hidden border border-premium-gold/20 shadow-[0_0_30px_rgba(212,175,55,0.05)] group mb-16">
+                <iframe src="https://maps.google.com/maps?q=Rua%20Cacilda%20Becker,%2050%20-%20Belo%20Horizonte&t=&z=15&ie=UTF8&iwloc=&output=embed" class="w-full h-80 md:h-96 grayscale group-hover:grayscale-0 transition duration-700" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="absolute inset-0 pointer-events-none border border-white/5 rounded-xl"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#050505] pt-12 pb-24 md:pb-12 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col items-center">
+            <img src="img/logo/logo.webp" alt="Juca Lanches Logo" class="h-24 w-auto object-contain mb-6">
+            <span class="font-serif font-bold text-xl tracking-widest text-white uppercase mb-6">
+                Juca <span class="text-premium-gold italic">Lanches</span>
+            </span>
+            <div class="flex flex-col sm:flex-row items-center gap-8 mb-8">
+                <a href="https://www.instagram.com/juquinha_lanches/" target="_blank" class="flex items-center gap-3 text-gray-400 hover:text-premium-gold transition duration-300">
+                    <i class="ph-light ph-instagram-logo text-3xl"></i>
+                    <span class="text-sm tracking-widest">@juquinha_lanches</span>
+                </a>
+                <a href="https://wa.me/5531988866455" target="_blank" class="flex items-center gap-3 text-gray-400 hover:text-premium-gold transition duration-300">
+                    <i class="ph-light ph-phone text-3xl"></i>
+                    <span class="text-sm tracking-widest">(31) 9 8886-6455</span>
+                </a>
+            </div>
+            <p class="text-xs text-gray-600 tracking-widest uppercase text-center mb-1">© 2026 Juca Lanches.</p>
+            
+            <p class="text-[9px] text-gray-700 tracking-widest uppercase text-center mt-4">
+                Desenvolvido por <a href="https://wa.me/5531980159559" target="_blank" class="inline-flex items-center gap-1 text-premium-gold/70 hover:text-premium-gold transition duration-300">Elberth <i class="ph-bold ph-whatsapp"></i> (31) 9 8015-9559</a>
+            </p>
+        </div>
+    </footer>
+
+    <button id="btn-floating-cart" onclick="mostrarTelaCarrinho()" class="hidden fixed bottom-6 right-4 sm:right-8 z-50 bg-premium-gold text-black px-6 py-4 rounded-full shadow-[0_0_20px_rgba(245,158,11,0.4)] flex items-center gap-3 hover:scale-105 transition-transform duration-300">
+        <i class="ph-bold ph-shopping-cart text-2xl"></i>
+        <div class="text-left">
+            <p class="text-[10px] uppercase tracking-widest font-bold">Ver Carrinho</p>
+            <p id="floating-cart-total" class="font-serif text-lg leading-none">R$ 0,00</p>
+        </div>
+        <div id="floating-cart-count" class="absolute -top-2 -right-2 bg-white text-black text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center border-2 border-premium-gold">0</div>
+    </button>
+
+    <div id="checkout-overlay" class="fixed inset-0 bg-black/80 z-[60] hidden transition-opacity duration-300 opacity-0 backdrop-blur-sm" onclick="fecharGaveta()"></div>
+
+    <div id="checkout-drawer" class="fixed top-0 right-0 h-full w-full md:w-[450px] bg-[#0a0a0a] border-l border-premium-gold/30 z-[70] transform translate-x-full transition-transform duration-300 ease-in-out shadow-2xl flex flex-col">
+        
+        <div class="flex justify-between items-center p-6 border-b border-white/10 shrink-0">
+            <h2 class="font-serif text-2xl text-premium-gold italic" id="drawer-title">Acompanhamentos</h2>
+            <button onclick="fecharGaveta()" class="text-gray-400 hover:text-white transition">
+                <i class="ph-light ph-x text-2xl"></i>
+            </button>
+        </div>
+
+        <div class="flex-1 overflow-y-auto p-6 relative">
+            
+            <div id="step-acompanhamentos" class="space-y-8 hidden">
+                <div>
+                    <h3 class="text-lg font-serif text-white mb-2">Acréscimos</h3>
+                    <p class="text-xs text-gray-400 mb-4">Turbine seu <span class="text-premium-gold font-medium" id="nome-lanche-display">lanche</span>.</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center justify-between border border-white/5 bg-[#111] p-3 cursor-pointer hover:border-premium-gold/50 transition">
+                            <div class="flex items-center gap-3">
+                                <input type="checkbox" value="Carne (Bife)" class="acrescimo-checkbox accent-premium-gold w-4 h-4">
+                                <span class="text-gray-300 text-sm">Carne (Bife)</span>
+                            </div>
+                            <span class="text-premium-gold text-sm font-semibold">R$ 3,00</span>
+                        </label>
+                        <label class="flex items-center justify-between border border-white/5 bg-[#111] p-3 cursor-pointer hover:border-premium-gold/50 transition">
+                            <div class="flex items-center gap-3"><input type="checkbox" value="Ovo" class="acrescimo-checkbox accent-premium-gold w-4 h-4"><span class="text-gray-300 text-sm">Ovo</span></div>
+                            <span class="text-premium-gold text-sm font-semibold">R$ 3,00</span>
+                        </label>
+                        <label class="flex items-center justify-between border border-white/5 bg-[#111] p-3 cursor-pointer hover:border-premium-gold/50 transition">
+                            <div class="flex items-center gap-3"><input type="checkbox" value="Bacon" class="acrescimo-checkbox accent-premium-gold w-4 h-4"><span class="text-gray-300 text-sm">Bacon</span></div>
+                            <span class="text-premium-gold text-sm font-semibold">R$ 3,00</span>
+                        </label>
+                        <label class="flex items-center justify-between border border-white/5 bg-[#111] p-3 cursor-pointer hover:border-premium-gold/50 transition">
+                            <div class="flex items-center gap-3"><input type="checkbox" value="Presunto" class="acrescimo-checkbox accent-premium-gold w-4 h-4"><span class="text-gray-300 text-sm">Presunto</span></div>
+                            <span class="text-premium-gold text-sm font-semibold">R$ 3,00</span>
+                        </label>
+                        <label class="flex items-center justify-between border border-white/5 bg-[#111] p-3 cursor-pointer hover:border-premium-gold/50 transition">
+                            <div class="flex items-center gap-3"><input type="checkbox" value="Mussarela" class="acrescimo-checkbox accent-premium-gold w-4 h-4"><span class="text-gray-300 text-sm">Mussarela</span></div>
+                            <span class="text-premium-gold text-sm font-semibold">R$ 3,00</span>
+                        </label>
+                        <label class="flex items-center justify-between border border-white/5 bg-[#111] p-3 cursor-pointer hover:border-premium-gold/50 transition">
+                            <div class="flex items-center gap-3"><input type="checkbox" value="Cheddar" class="acrescimo-checkbox accent-premium-gold w-4 h-4"><span class="text-gray-300 text-sm">Cheddar</span></div>
+                            <span class="text-premium-gold text-sm font-semibold">R$ 3,00</span>
+                        </label>
+                        <label class="flex items-center justify-between border border-white/5 bg-[#111] p-3 cursor-pointer hover:border-premium-gold/50 transition">
+                            <div class="flex items-center gap-3"><input type="checkbox" value="Molho Verde" class="acrescimo-checkbox accent-premium-gold w-4 h-4"><span class="text-gray-300 text-sm">Molho Verde</span></div>
+                            <span class="text-premium-gold text-sm font-semibold">R$ 1,50</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="w-full h-px bg-white/5"></div>
+
+                <div>
+                    <h3 class="text-lg font-serif text-white mb-2">Bebidas</h3>
+                    <p class="text-xs text-gray-400 mb-4">Escolha uma bebida gelada.</p>
+                    <div class="space-y-3">
+                        <label class="flex items-center justify-between border border-white/10 p-4 cursor-pointer hover:border-premium-gold/50 transition">
+                            <div class="flex items-center gap-3"><input type="checkbox" value="Água s/gás" class="bebida-checkbox accent-premium-gold w-5 h-5 shrink-0"><span class="text-white text-sm font-semibold">Água sem Gás</span></div>
+                            <span class="text-premium-gold text-sm shrink-0 ml-2">R$ 3,00</span>
+                        </label>
+                        <label class="flex items-center justify-between border border-white/10 p-4 cursor-pointer hover:border-premium-gold/50 transition">
+                            <div class="flex items-center gap-3"><input type="checkbox" value="Água c/gás" class="bebida-checkbox accent-premium-gold w-5 h-5 shrink-0"><span class="text-white text-sm font-semibold">Água com Gás</span></div>
+                            <span class="text-premium-gold text-sm shrink-0 ml-2">R$ 3,50</span>
+                        </label>
+                        <label class="flex items-center justify-between border border-white/10 p-4 cursor-pointer hover:border-premium-gold/50 transition">
+                            <div class="flex items-center gap-3"><input type="checkbox" value="Refri 200ml" class="bebida-checkbox accent-premium-gold w-5 h-5 shrink-0"><span class="text-white text-sm font-semibold">Refrigerante 200ml</span></div>
+                            <span class="text-premium-gold text-sm shrink-0 ml-2">R$ 3,00</span>
+                        </label>
+                        <label class="flex items-center justify-between border border-white/10 p-4 cursor-pointer hover:border-premium-gold/50 transition">
+                            <div class="flex items-center gap-3"><input type="checkbox" value="Refri lata" class="bebida-checkbox accent-premium-gold w-5 h-5 shrink-0"><span class="text-white text-sm font-semibold">Refrigerante Lata</span></div>
+                            <span class="text-premium-gold text-sm shrink-0 ml-2">R$ 6,00</span>
+                        </label>
+                        <label class="flex items-center justify-between border border-white/10 p-4 cursor-pointer hover:border-premium-gold/50 transition">
+                            <div class="flex items-center gap-3"><input type="checkbox" value="Refri 600ml" class="bebida-checkbox accent-premium-gold w-5 h-5 shrink-0"><span class="text-white text-sm font-semibold">Refrigerante 600ml</span></div>
+                            <span class="text-premium-gold text-sm shrink-0 ml-2">R$ 7,00</span>
+                        </label>
+                        <label class="flex items-center justify-between border border-white/10 p-4 cursor-pointer hover:border-premium-gold/50 transition">
+                            <div class="flex items-center gap-3"><input type="checkbox" value="Coca 600ml" class="bebida-checkbox accent-premium-gold w-5 h-5 shrink-0"><span class="text-white text-sm font-semibold">Coca-Cola 600ml</span></div>
+                            <span class="text-premium-gold text-sm shrink-0 ml-2">R$ 8,00</span>
+                        </label>
+                        <label class="flex items-center justify-between border border-white/10 p-4 cursor-pointer hover:border-premium-gold/50 transition">
+                            <div class="flex items-start gap-3"><input type="checkbox" value="Mate couro e guaraná 1 litro" class="bebida-checkbox accent-premium-gold w-5 h-5 mt-0.5 shrink-0"><div class="flex flex-col"><span class="text-white text-sm font-semibold">Mate Couro e Guaraná 1L</span></div></div>
+                            <span class="text-premium-gold text-sm shrink-0 ml-2">R$ 9,00</span>
+                        </label>
+                        <label class="flex items-center justify-between border border-white/10 p-4 cursor-pointer hover:border-premium-gold/50 transition">
+                            <div class="flex items-start gap-3"><input type="checkbox" value="Mate couro e kuat 2 litros" class="bebida-checkbox accent-premium-gold w-5 h-5 mt-0.5 shrink-0"><div class="flex flex-col"><span class="text-white text-sm font-semibold">Mate Couro e Kuat 2L</span></div></div>
+                            <span class="text-premium-gold text-sm shrink-0 ml-2">R$ 12,00</span>
+                        </label>
+                        <label class="flex items-center justify-between border border-white/10 p-4 cursor-pointer hover:border-premium-gold/50 transition">
+                            <div class="flex items-start gap-3"><input type="checkbox" value="Pepsi, guarapan, guaraná e Fanta 2 litros" class="bebida-checkbox accent-premium-gold w-5 h-5 mt-0.5 shrink-0"><div class="flex flex-col"><span class="text-white text-sm font-semibold">Pepsi, Guarapan, Guaraná, Fanta 2L</span></div></div>
+                            <span class="text-premium-gold text-sm shrink-0 ml-2">R$ 14,00</span>
+                        </label>
+                        <label class="flex items-center justify-between border border-white/10 p-4 cursor-pointer hover:border-premium-gold/50 transition">
+                            <div class="flex items-center gap-3"><input type="checkbox" value="Coca cola 2 litros" class="bebida-checkbox accent-premium-gold w-5 h-5 shrink-0"><span class="text-white text-sm font-semibold">Coca-Cola 2 Litros</span></div>
+                            <span class="text-premium-gold text-sm shrink-0 ml-2">R$ 16,00</span>
+                        </label>
+                        <label class="flex items-center justify-between border border-white/10 p-4 cursor-pointer hover:border-premium-gold/50 transition">
+                            <div class="flex items-center gap-3"><input type="checkbox" value="Suco lata" class="bebida-checkbox accent-premium-gold w-5 h-5 shrink-0"><span class="text-white text-sm font-semibold">Suco Lata</span></div>
+                            <span class="text-premium-gold text-sm shrink-0 ml-2">R$ 6,00</span>
+                        </label>
+                        <label class="flex items-center justify-between border border-white/10 p-4 cursor-pointer hover:border-premium-gold/50 transition">
+                            <div class="flex items-center gap-3"><input type="checkbox" value="Suco 450ml" class="bebida-checkbox accent-premium-gold w-5 h-5 shrink-0"><span class="text-white text-sm font-semibold">Suco 450ml</span></div>
+                            <span class="text-premium-gold text-sm shrink-0 ml-2">R$ 6,50</span>
+                        </label>
+                        <label class="flex items-center justify-between border border-white/10 p-4 cursor-pointer hover:border-premium-gold/50 transition">
+                            <div class="flex items-center gap-3"><input type="checkbox" value="Suco 1 litro" class="bebida-checkbox accent-premium-gold w-5 h-5 shrink-0"><span class="text-white text-sm font-semibold">Suco 1 Litro</span></div>
+                            <span class="text-premium-gold text-sm shrink-0 ml-2">R$ 8,00</span>
+                        </label>
+                        <label class="flex items-center justify-between border border-white/10 p-4 cursor-pointer hover:border-premium-gold/50 transition">
+                            <div class="flex items-center gap-3"><input type="checkbox" value="Gatorade" class="bebida-checkbox accent-premium-gold w-5 h-5 shrink-0"><span class="text-white text-sm font-semibold">Gatorade</span></div>
+                            <span class="text-premium-gold text-sm shrink-0 ml-2">R$ 7,50</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div id="step-carrinho" class="space-y-6 hidden">
+                <div id="lista-carrinho" class="space-y-4">
+                    </div>
+                
+                <div class="border-t border-white/10 pt-4 mt-4">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-gray-400 text-sm tracking-widest uppercase">Subtotal</span>
+                        <span id="carrinho-subtotal-texto" class="text-white font-serif text-xl">R$ 0,00</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="step-endereco" class="space-y-5 hidden">
+                <p class="text-sm text-gray-400 mb-2">Preencha seus dados para finalizar o pedido.</p>
+                
+                <div class="flex p-1 bg-[#111] rounded-md mb-4 border border-white/10">
+                    <button id="btn-entrega" onclick="setTipoEntrega('Entrega')" class="flex-1 py-2 text-xs font-semibold tracking-widest uppercase bg-premium-gold text-black rounded transition"> Entrega</button>
+                    <button id="btn-retirada" onclick="setTipoEntrega('Retirada')" class="flex-1 py-2 text-xs font-semibold tracking-widest uppercase text-gray-400 hover:text-white rounded transition"> Vou Buscar</button>
+                </div>
+
+                <div class="space-y-4 pb-4">
+                    <div>
+                        <label class="block text-[10px] uppercase tracking-widest text-gray-500 mb-1">Seu Nome *</label>
+                        <input type="text" id="input-nome" placeholder="Como devemos te chamar?" class="w-full bg-[#111] border border-white/10 text-white p-3 text-sm focus:border-premium-gold outline-none transition">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-[10px] uppercase tracking-widest text-gray-500 mb-1">Forma de Pagamento *</label>
+                        <select id="input-pagamento" onchange="toggleTroco()" class="w-full bg-[#111] border border-white/10 text-white p-3 text-sm focus:border-premium-gold outline-none transition appearance-none">
+                            <option value="PIX">PIX</option>
+                            <option value="Cartão (Levar Maquininha)">Cartão de Crédito/Débito</option>
+                            <option value="Dinheiro">Dinheiro</option>
+                        </select>
+                    </div>
+
+                    <div id="div-troco" class="hidden">
+                        <label class="block text-[10px] uppercase tracking-widest text-gray-500 mb-1 text-premium-gold">Troco para quanto? (Opcional)</label>
+                        <input type="text" id="input-troco" placeholder="Ex: 50" class="w-full bg-[#111] border border-premium-gold/50 text-white p-3 text-sm focus:border-premium-gold outline-none transition">
+                    </div>
+
+                    <div id="bloco-endereco" class="space-y-4 pt-2">
+                        
+                        <p class="text-[11px] text-premium-gold bg-premium-gold/10 p-2 rounded text-center border border-premium-gold/20 flex items-center justify-center gap-2">
+                            <i class="ph-fill ph-motorcycle text-lg"></i> O valor da entrega será calculado no WhatsApp.
+                        </p>
+
+                        <div class="w-full h-px bg-white/5 mb-2 mt-2"></div>
+                        
+                        <div>
+                            <label class="block text-[10px] uppercase tracking-widest text-gray-500 mb-1">CEP</label>
+                            <input type="text" id="input-cep" onkeyup="buscarCEP()" placeholder="Ex: 30000000" class="w-full bg-[#111] border border-white/10 text-white p-3 text-sm focus:border-premium-gold outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] uppercase tracking-widest text-gray-500 mb-1">Rua / Logradouro *</label>
+                            <input type="text" id="input-rua" placeholder="Nome da sua rua" class="w-full bg-[#111] border border-white/10 text-white p-3 text-sm focus:border-premium-gold outline-none transition">
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-[10px] uppercase tracking-widest text-gray-500 mb-1">Número *</label>
+                                <input type="text" id="input-numero" placeholder="Ex: 50" class="w-full bg-[#111] border border-white/10 text-white p-3 text-sm focus:border-premium-gold outline-none transition">
+                            </div>
+                            <div>
+                                <label class="block text-[10px] uppercase tracking-widest text-gray-500 mb-1">Bairro *</label>
+                                <input type="text" id="input-bairro" placeholder="Seu bairro" class="w-full bg-[#111] border border-white/10 text-white p-3 text-sm focus:border-premium-gold outline-none transition">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-[10px] uppercase tracking-widest text-gray-500 mb-1">Ponto de Referência</label>
+                            <input type="text" id="input-referencia" placeholder="Ex: Próximo à padaria" class="w-full bg-[#111] border border-white/10 text-white p-3 text-sm focus:border-premium-gold outline-none transition">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="p-6 border-t border-white/10 bg-[#0a0a0a] shrink-0">
+            <div id="footer-acompanhamentos" class="flex gap-4 hidden">
+                <button onclick="fecharGaveta()" class="w-1/3 py-3 text-xs tracking-widest uppercase border border-gray-600 text-gray-400 hover:text-white hover:border-white transition">Cancelar</button>
+                <button onclick="adicionarAoCarrinho()" class="w-2/3 py-3 text-xs tracking-widest uppercase bg-premium-gold text-black font-semibold hover:bg-white transition flex justify-center items-center gap-2">
+                    <i class="ph-bold ph-plus"></i> Add ao Carrinho
+                </button>
+            </div>
+            
+            <div id="footer-carrinho" class="flex flex-col gap-3 hidden">
+                <button onclick="avancarParaEndereco()" id="btn-avancar-endereco" class="w-full py-3 text-xs tracking-widest uppercase bg-premium-gold text-black font-semibold hover:bg-white transition">
+                    Avançar p/ Entrega
+                </button>
+                <button onclick="fecharGaveta()" class="w-full py-3 text-xs tracking-widest uppercase text-gray-400 hover:text-white transition">
+                    Adicionar Mais Itens
+                </button>
+            </div>
+
+            <div id="footer-endereco" class="flex gap-4 hidden">
+                <button onclick="mostrarTelaCarrinho()" class="w-1/3 py-3 text-xs tracking-widest uppercase border border-gray-600 text-gray-400 hover:text-white hover:border-white transition">Voltar</button>
+                <button onclick="finalizarPedido()" class="w-2/3 py-3 flex items-center justify-center gap-2 text-xs tracking-widest uppercase bg-premium-gold text-black font-semibold hover:bg-white transition">
+                    <i class="ph-light ph-whatsapp text-lg"></i> Finalizar Pedido
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
