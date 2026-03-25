@@ -234,27 +234,36 @@
         </div>
     </section>
 
-    <footer class="bg-[#050505] pt-12 pb-24 md:pb-12 border-t border-white/5">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col items-center">
-            <img src="img/logo/logo.webp" alt="Juca Lanches Logo" class="h-24 w-auto object-contain mb-6">
-            <span class="font-serif font-bold text-xl tracking-widest text-white uppercase mb-6">
-                Juca <span class="text-premium-gold italic">Lanches</span>
-            </span>
-            <div class="flex flex-col sm:flex-row items-center gap-8 mb-8">
-                <a href="https://www.instagram.com/juquinha_lanches/" target="_blank" class="flex items-center gap-3 text-gray-400 hover:text-premium-gold transition duration-300">
-                    <i class="ph-light ph-instagram-logo text-3xl"></i>
-                    <span class="text-sm tracking-widest">@juquinha_lanches</span>
-                </a>
-                <a href="https://wa.me/5531988866455" target="_blank" class="flex items-center gap-3 text-gray-400 hover:text-premium-gold transition duration-300">
-                    <i class="ph-light ph-phone text-3xl"></i>
-                    <span class="text-sm tracking-widest">(31) 9 8886-6455</span>
-                </a>
+    <footer class="bg-[#050505] pt-12 pb-28 md:pb-12 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="flex flex-col md:flex-row items-center gap-4">
+                    <img src="img/logo/logo.webp" alt="Juca Lanches Logo" class="h-16 w-auto object-contain">
+                    <span class="font-serif font-bold text-xl tracking-widest text-white uppercase mt-2 md:mt-0">
+                        Juca <span class="text-premium-gold italic">Lanches</span>
+                    </span>
+                </div>
+
+                <div class="flex flex-col sm:flex-row items-center gap-6">
+                    <a href="https://www.instagram.com/juquinha_lanches/" target="_blank" class="flex items-center gap-2 text-gray-400 hover:text-premium-gold transition duration-300">
+                        <i class="ph-light ph-instagram-logo text-2xl"></i>
+                        <span class="text-xs tracking-widest hidden sm:block">@juquinha_lanches</span>
+                    </a>
+                    <a href="https://wa.me/5531988866455" target="_blank" class="flex items-center gap-2 text-gray-400 hover:text-premium-gold transition duration-300">
+                        <i class="ph-light ph-phone text-2xl"></i>
+                        <span class="text-xs tracking-widest">(31) 9 8886-6455</span>
+                    </a>
+                </div>
             </div>
-            <p class="text-xs text-gray-600 tracking-widest uppercase text-center mb-1">© 2026 Juca Lanches.</p>
-            
-            <p class="text-[9px] text-gray-700 tracking-widest uppercase text-center mt-4">
-                Desenvolvido por <a href="https://wa.me/5531980159559" target="_blank" class="inline-flex items-center gap-1 text-premium-gold/70 hover:text-premium-gold transition duration-300">Elberth <i class="ph-bold ph-whatsapp"></i> (31) 9 8015-9559</a>
-            </p>
+
+            <div class="w-full h-px bg-white/5 my-8"></div>
+
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-[10px] text-gray-600 tracking-widest uppercase text-center md:text-left">© 2026 Juca Lanches. Todos os direitos reservados.</p>
+                <p class="text-[9px] text-gray-600 tracking-widest uppercase text-center md:text-right">
+                    Desenvolvido por <a href="https://wa.me/5531980159559" target="_blank" class="inline-flex items-center gap-1 text-premium-gold/70 hover:text-premium-gold transition duration-300">Elberth <i class="ph-bold ph-whatsapp"></i> (31) 9 8015-9559</a>
+                </p>
+            </div>
         </div>
     </footer>
 
@@ -409,6 +418,7 @@
                     <div>
                         <label class="block text-[10px] uppercase tracking-widest text-gray-500 mb-1">Seu Nome *</label>
                         <input type="text" id="input-nome" placeholder="Como devemos te chamar?" class="w-full bg-[#111] border border-white/10 text-white p-3 text-sm focus:border-premium-gold outline-none transition">
+                        <p id="erro-nome" class="text-red-500 text-[10px] mt-1 hidden transition-all">Por favor, informe como devemos te chamar.</p>
                     </div>
                     
                     <div>
@@ -426,7 +436,6 @@
                     </div>
 
                     <div id="bloco-endereco" class="space-y-4 pt-2">
-                        
                         <p class="text-[11px] text-premium-gold bg-premium-gold/10 p-2 rounded text-center border border-premium-gold/20 flex items-center justify-center gap-2">
                             <i class="ph-fill ph-motorcycle text-lg"></i> O valor da entrega será calculado no WhatsApp.
                         </p>
@@ -437,20 +446,27 @@
                             <label class="block text-[10px] uppercase tracking-widest text-gray-500 mb-1">CEP</label>
                             <input type="text" id="input-cep" onkeyup="buscarCEP()" placeholder="Ex: 30000000" class="w-full bg-[#111] border border-white/10 text-white p-3 text-sm focus:border-premium-gold outline-none transition">
                         </div>
+                        
                         <div>
                             <label class="block text-[10px] uppercase tracking-widest text-gray-500 mb-1">Rua / Logradouro *</label>
                             <input type="text" id="input-rua" placeholder="Nome da sua rua" class="w-full bg-[#111] border border-white/10 text-white p-3 text-sm focus:border-premium-gold outline-none transition">
+                            <p id="erro-rua" class="text-red-500 text-[10px] mt-1 hidden transition-all">Por favor, informe a rua para a entrega.</p>
                         </div>
+                        
                         <div class="grid grid-cols-2 gap-4">
                             <div>
                                 <label class="block text-[10px] uppercase tracking-widest text-gray-500 mb-1">Número *</label>
                                 <input type="text" id="input-numero" placeholder="Ex: 50" class="w-full bg-[#111] border border-white/10 text-white p-3 text-sm focus:border-premium-gold outline-none transition">
+                                <p id="erro-numero" class="text-red-500 text-[10px] mt-1 hidden transition-all">Faltou o número.</p>
                             </div>
+                            
                             <div>
                                 <label class="block text-[10px] uppercase tracking-widest text-gray-500 mb-1">Bairro *</label>
                                 <input type="text" id="input-bairro" placeholder="Seu bairro" class="w-full bg-[#111] border border-white/10 text-white p-3 text-sm focus:border-premium-gold outline-none transition">
+                                <p id="erro-bairro" class="text-red-500 text-[10px] mt-1 hidden transition-all">Informe o bairro.</p>
                             </div>
                         </div>
+                        
                         <div>
                             <label class="block text-[10px] uppercase tracking-widest text-gray-500 mb-1">Ponto de Referência</label>
                             <input type="text" id="input-referencia" placeholder="Ex: Próximo à padaria" class="w-full bg-[#111] border border-white/10 text-white p-3 text-sm focus:border-premium-gold outline-none transition">
@@ -486,6 +502,19 @@
             </div>
         </div>
 
+    </div>
+
+    <div id="custom-alert" class="fixed inset-0 bg-black/80 z-[100] hidden items-center justify-center p-4 backdrop-blur-sm transition-opacity duration-300 opacity-0">
+        <div class="bg-[#111] border border-premium-gold/30 rounded-xl p-6 max-w-sm w-full text-center shadow-[0_0_30px_rgba(245,158,11,0.15)] transform scale-95 transition-transform duration-300" id="custom-alert-box">
+            <div class="w-16 h-16 rounded-full bg-premium-gold/10 border border-premium-gold/20 flex items-center justify-center mx-auto mb-4">
+                <i class="ph-fill ph-warning-circle text-4xl text-premium-gold"></i>
+            </div>
+            <h3 class="font-serif text-2xl text-white mb-2 italic">Atenção</h3>
+            <p id="custom-alert-message" class="text-gray-400 text-sm font-light mb-8">Mensagem aqui</p>
+            <button onclick="fecharAlerta()" class="w-full py-3 text-xs tracking-widest uppercase bg-premium-gold text-black font-semibold rounded hover:bg-white transition duration-300">
+                Entendi
+            </button>
+        </div>
     </div>
 
     <script src="js/main.js"></script>
