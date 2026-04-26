@@ -476,20 +476,17 @@ function verificarStatusLoja() {
     let lojaAberta = false;
     let textoAbertura = "";
 
-    if (diaSemana >= 2 && diaSemana <= 5) {
-        if (horaAtualDecimal >= 19.5 && horaAtualDecimal < 23.5) lojaAberta = true;
-        else if (horaAtualDecimal < 19.5) textoAbertura = "Abre hoje às 19:30h";
-        else textoAbertura = diaSemana === 5 ? "Abre amanhã às 19:00h" : "Abre amanhã às 19:30h";
-    } else if (diaSemana === 6) {
-        if (horaAtualDecimal >= 19.0 && horaAtualDecimal < 23.5) lojaAberta = true;
-        else if (horaAtualDecimal < 19.0) textoAbertura = "Abre hoje às 19:00h";
-        else textoAbertura = "Abre amanhã às 19:00h";
-    } else if (diaSemana === 0) {
-        if (horaAtualDecimal >= 19.0 && horaAtualDecimal < 23.5) lojaAberta = true;
-        else if (horaAtualDecimal < 19.0) textoAbertura = "Abre hoje às 19:00h";
-        else textoAbertura = "Abre terça-feira às 19:30h";
-    } else if (diaSemana === 1) {
-        textoAbertura = "Abre amanhã às 19:30h";
+    // Lógica para Terça (2) a Domingo (0)
+    if (diaSemana >= 2 && diaSemana <= 6 || diaSemana === 0) {
+        // Se for 18:00 ou mais (e antes de virar para 00:00 do dia seguinte)
+        if (horaAtualDecimal >= 18.0) {
+            lojaAberta = true;
+        } else {
+            textoAbertura = "Abre hoje às 18:00h";
+        }
+    } else if (diaSemana === 1) { 
+        // Segunda-feira (dia de folga)
+        textoAbertura = "Abre amanhã às 18:00h";
     }
 
     const statusDiv = document.getElementById('status-loja');
